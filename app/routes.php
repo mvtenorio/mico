@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
+
+Route::resource('items', 'ItemsController');
+
+Route::resource('categories', 'CategoriesController');
