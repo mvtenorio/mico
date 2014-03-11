@@ -1,6 +1,6 @@
 <?php
 
-class CategoriesTableSeeder extends Seeder {
+class TagsTableSeeder extends Seeder {
 
 	public function run()
 	{

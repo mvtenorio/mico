@@ -1,17 +1,17 @@
 <?php
 
-class CategoriesController extends BaseController {
+class TagsController extends BaseController {
 
 	/**
-	 * Category Repository
+	 * Tag Repository
 	 *
-	 * @var Category
+	 * @var Tag
 	 */
-	protected $category;
+	protected $tag;
 
-	public function __construct(Category $category)
+	public function __construct(Tag $tag)
 	{
-		$this->category = $category;
+		$this->tag = $tag;
 	}
 
 	/**
@@ -21,9 +21,9 @@ class CategoriesController extends BaseController {
 	 */
 	public function index()
 	{
-		$categories = $this->category->all();
+		$tags = $this->tag->all();
 
-		return View::make('categories.index', compact('categories'));
+		return View::make('tags.index', compact('tags'));
 	}
 
 	/**
@@ -33,7 +33,7 @@ class CategoriesController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('categories.create');
+		return View::make('tags.create');
 	}
 
 	/**
@@ -44,16 +44,16 @@ class CategoriesController extends BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		$validation = Validator::make($input, Category::$rules);
+		$validation = Validator::make($input, Tag::$rules);
 
 		if ($validation->passes())
 		{
-			$this->category->create($input);
+			$this->tag->create($input);
 
-			return Redirect::route('categories.index');
+			return Redirect::route('tags.index');
 		}
 
-		return Redirect::route('categories.create')
+		return Redirect::route('tags.create')
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -67,9 +67,9 @@ class CategoriesController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$category = $this->category->findOrFail($id);
+		$tag = $this->tag->findOrFail($id);
 
-		return View::make('categories.show', compact('category'));
+		return View::make('tags.show', compact('tag'));
 	}
 
 	/**
@@ -80,14 +80,14 @@ class CategoriesController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$category = $this->category->find($id);
+		$tag = $this->tag->find($id);
 
-		if (is_null($category))
+		if (is_null($tag))
 		{
-			return Redirect::route('categories.index');
+			return Redirect::route('tags.index');
 		}
 
-		return View::make('categories.edit', compact('category'));
+		return View::make('tags.edit', compact('tag'));
 	}
 
 	/**
@@ -99,17 +99,17 @@ class CategoriesController extends BaseController {
 	public function update($id)
 	{
 		$input = array_except(Input::all(), '_method');
-		$validation = Validator::make($input, Category::$rules);
+		$validation = Validator::make($input, Tag::$rules);
 
 		if ($validation->passes())
 		{
-			$category = $this->category->find($id);
-			$category->update($input);
+			$tag = $this->tag->find($id);
+			$tag->update($input);
 
-			return Redirect::route('categories.show', $id);
+			return Redirect::route('tags.show', $id);
 		}
 
-		return Redirect::route('categories.edit', $id)
+		return Redirect::route('tags.edit', $id)
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -123,9 +123,9 @@ class CategoriesController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->category->find($id)->delete();
+		$this->tag->find($id)->delete();
 
-		return Redirect::route('categories.index');
+		return Redirect::route('tags.index');
 	}
 
 }

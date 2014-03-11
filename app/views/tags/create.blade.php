@@ -1,10 +1,10 @@
-@extends('layouts.scaffold')
+@extends('layouts.master')
 
 @section('main')
 
-<h1>Create Category</h1>
+<h1>Create Tag</h1>
 
-{{ Form::open(array('route' => 'categories.store')) }}
+{{ Form::open(array('route' => 'tags.store')) }}
 	<ul>
         <li>
             {{ Form::label('name', 'Name:') }}

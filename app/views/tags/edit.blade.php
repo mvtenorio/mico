@@ -1,9 +1,9 @@
-@extends('layouts.scaffold')
+@extends('layouts.master')
 
 @section('main')
 
-<h1>Edit Category</h1>
-{{ Form::model($category, array('method' => 'PATCH', 'route' => array('categories.update', $category->id))) }}
+<h1>Edit Tag</h1>
+{{ Form::model($tag, array('method' => 'PATCH', 'route' => array('tags.update', $tag->id))) }}
 	<ul>
         <li>
             {{ Form::label('name', 'Name:') }}
@@ -12,7 +12,7 @@
 
 		<li>
 			{{ Form::submit('Update', array('class' => 'btn btn-info')) }}
-			{{ link_to_route('categories.show', 'Cancel', $category->id, array('class' => 'btn')) }}
+			{{ link_to_route('tags.show', 'Cancel', $tag->id, array('class' => 'btn')) }}
 		</li>
 	</ul>
 {{ Form::close() }}

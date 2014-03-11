@@ -15,4 +15,4 @@ Route::get('/', 'HomeController@index');
 
 Route::resource('items', 'ItemsController');
 
-Route::resource('categories', 'CategoriesController');
+Route::resource('tags', 'TagsController');
