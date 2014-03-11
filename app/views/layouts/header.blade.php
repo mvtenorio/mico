@@ -1,0 +1,37 @@
+<div id="wrapper">
+
+
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom:0px">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand"><i class="fa fa-inbox"></i>&nbsp; MICO</a>
+		</div>
+
+		<ul class="nav navbar-top-links navbar-right">
+
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-caret-down"></i>
+				</a>
+				<ul class="dropdown-menu">
+						<li>
+							<a href="#"><i class="fa fa-info-circle fa-fw"></i> Sobre o MICO</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a href="#"><i class="fa fa-sign-out fa-fw"></i> Sair do sistema</a>
+						</li>
+						<li>{{ link_to('logout', 'Sair') }}</li>
+				</ul>
+			</li>
+
+		</ul>
+	</nav>
+
+	@include('layouts.sidebar')
+
+	<div id="page-wrapper">

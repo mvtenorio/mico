@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.base')
 
-@section('main')
+@section('content')
 
 <h1>Mico</h1>
 

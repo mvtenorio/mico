@@ -51,6 +51,11 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(MICO\Services\Validators\ValidationException $e, $code)
+{
+	return Redirect::back()->withInput()->withErrors($e->getErrors());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
