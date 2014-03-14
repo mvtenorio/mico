@@ -56,7 +56,7 @@ class ItemsController extends BaseController {
 		return Redirect::route('items.create')
 			->withInput()
 			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->with('message', 'Item salvo com sucesso.');
 	}
 
 	/**
@@ -112,7 +112,7 @@ class ItemsController extends BaseController {
 		return Redirect::route('items.edit', $id)
 			->withInput()
 			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->with('message', 'Item salvo com sucesso.');
 	}
 
 	/**

@@ -2,19 +2,10 @@
 
 @section('main')
 
-<h1>Create Item</h1>
+<h1>Novo Item</h1>
 
 {{ Form::open(array('route' => 'items.store')) }}
-	<ul>
-        <li>
-            {{ Form::label('name', 'Name:') }}
-            {{ Form::text('name') }}
-        </li>
-
-		<li>
-			{{ Form::submit('Submit', array('class' => 'btn btn-info')) }}
-		</li>
-	</ul>
+	@include('items.partials._form')
 {{ Form::close() }}
 
 @if ($errors->any())
