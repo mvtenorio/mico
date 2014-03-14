@@ -1,6 +1,6 @@
-<?php
+<?php namespace MICO\Models;
 
-class Item extends Eloquent {
+class Item extends BaseModel {
 	protected $guarded = array();
 
 	public static $rules = array(

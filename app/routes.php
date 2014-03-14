@@ -11,8 +11,46 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+// DESLOGADO
+Route::group(array('before' => 'guest'), function()
+{
 
-Route::resource('items', 'ItemsController');
+	Route::get('login', 'LoginController@index');
+	Route::post('login', 'LoginController@login');
 
-Route::resource('tags', 'TagsController');
+	// Route::controller('password', 'RemindersController');
+
+});
+
+// LOGADO
+Route::group(array('before' => 'auth'), function()
+{
+
+	Route::get('logout', 'LoginController@logout');
+
+	Route::get('/', array(
+		'as' => 'home.index',
+		'uses' => 'HomeController@index'
+	));
+
+	Route::group(array('before' => 'access'), function()
+	{
+		Route::resource('items', 'ItemsController');
+		Route::resource('tags', 'TagsController');
+	});
+
+	// Route::get('anexo/{pasta}/{file}', array(
+	// 	'as' => 'files.show',
+	// 	'uses' => 'FilesController@getFile',
+	// 	'after' => 'file'
+	// ));
+
+	Route::group(array('before' => 'ajax'), function()
+	{
+		// ajax
+
+		// autocomplete
+		//exemplo ---> Route::get('load-usuarios-autocomplete', 'UsuariosController@getAutoComplete');
+	});
+
+});

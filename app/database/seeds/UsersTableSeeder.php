@@ -4,15 +4,13 @@ class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		// Uncomment the below to wipe the table clean before populating
-		// DB::table('items')->truncate();
-
-		$items = array(
-
+		$users = array(
+			'name' => 'Admin',
+			'email' => 'admin',
+			'password' => Hash::make('123')
 		);
 
-		// Uncomment the below to run the seeder
-		// DB::table('items')->insert($items);
+		DB::table('users')->insert($users);
 	}
 
 }

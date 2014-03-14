@@ -7,10 +7,10 @@ class BackendServiceProvider extends ServiceProvider
 	public function register()
 	{
 
-		// $this->app->bind(
-		// 	'MICO\Repositories\Interfaces\UsuarioRepositoryInterface',
-		// 	'MICO\Repositories\Eloquent\EloquentUsuarioRepository'
-		// );
+		$this->app->bind(
+			'MICO\Repositories\Interfaces\UserRepositoryInterface',
+			'MICO\Repositories\Eloquent\EloquentUserRepository'
+		);
 
 	}
 }
