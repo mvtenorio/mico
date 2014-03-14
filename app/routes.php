@@ -33,11 +33,8 @@ Route::group(array('before' => 'auth'), function()
 		'uses' => 'HomeController@index'
 	));
 
-	Route::group(array('before' => 'access'), function()
-	{
-		Route::resource('items', 'ItemsController');
-		Route::resource('tags', 'TagsController');
-	});
+	Route::resource('items', 'ItemsController');
+	Route::resource('tags', 'TagsController', array('only' => array('index', 'store', 'destroy')));
 
 	// Route::get('anexo/{pasta}/{file}', array(
 	// 	'as' => 'files.show',

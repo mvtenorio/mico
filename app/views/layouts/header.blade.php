@@ -22,16 +22,11 @@
 							<a href="#"><i class="fa fa-info-circle fa-fw"></i> Sobre o MICO</a>
 						</li>
 						<li class="divider"></li>
-						<li>
-							<a href="#"><i class="fa fa-sign-out fa-fw"></i> Sair do sistema</a>
-						</li>
 						<li>{{ link_to('logout', 'Sair') }}</li>
 				</ul>
 			</li>
 
 		</ul>
 	</nav>
-
-	@include('layouts.sidebar')
 
 	<div id="page-wrapper">
