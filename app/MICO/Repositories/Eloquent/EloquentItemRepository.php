@@ -11,14 +11,15 @@ class EloquentItemRepository implements ItemRepositoryInterface
 		return Item::all();
 	}
 
-	public function store(Item $item)
+	public function getItemById($id)
+	{
+		return Item::find($id);
+	}
+
+	public function save(Item $item)
 	{
 		$item->save();
 		return $item;
-	}
-
-	public function update()
-	{
 	}
 
 	public function destroy()

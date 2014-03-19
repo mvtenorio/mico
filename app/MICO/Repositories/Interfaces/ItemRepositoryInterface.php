@@ -4,7 +4,7 @@ use Mico\Models\Item;
 
 interface ItemRepositoryInterface extends BaseRepositoryInterface
 {
-	public function store(Item $item);
-	public function update();
+	public function getItemById($id);
+	public function save(Item $item);
 	public function destroy();
 }

@@ -41,43 +41,34 @@ class ItemsController extends BaseController
 		}
 	}
 
-	// public function show($id)
-	// {
-	// 	$itemServices = $this->item->findOrFail($id);
+	public function edit($id)
+	{
+		$item = $this->itemServices->getItemById($id);
 
-	// 	return View::make('items.show', compact('item'));
-	// }
+		if (is_null($item))
+		{
+			return Redirect::route('items.index');
+		}
 
-	// public function edit($id)
-	// {
-	// 	$itemServices = $this->item->find($id);
+		return View::make('items.edit', compact('item'));
+	}
 
-	// 	if (is_null($itemServices))
-	// 	{
-	// 		return Redirect::route('items.index');
-	// 	}
+	public function update($id)
+	{
+		$input = array_except(Input::all(), '_method');
 
-	// 	return View::make('items.edit', compact('item'));
-	// }
-
-	// public function update($id)
-	// {
-	// 	$input = array_except(Input::all(), '_method');
-	// 	$validation = Validator::make($input, Item::$rules);
-
-	// 	if ($validation->passes())
-	// 	{
-	// 		$itemServices = $this->item->find($id);
-	// 		$itemServices->update($input);
-
-	// 		return Redirect::route('items.show', $id);
-	// 	}
-
-	// 	return Redirect::route('items.edit', $id)
-	// 		->withInput()
-	// 		->withErrors($validation)
-	// 		->with('message', 'Item salvo com sucesso.');
-	// }
+		try
+		{
+			$this->itemServices->update($id, $input);
+			return Redirect::route('items.edit', $id);
+		}
+		catch (ValidationException $e)
+		{
+			return Redirect::route('items.edit', $id)
+				->withInput()
+				->withErrors($e->getErrors());
+		}
+	}
 
 	// public function destroy($id)
 	// {

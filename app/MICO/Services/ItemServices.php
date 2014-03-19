@@ -22,6 +22,11 @@ class ItemServices
 		return $this->itemRepo->getAll();
 	}
 
+	public function getItemById($id)
+	{
+		return $this->itemRepo->getItemById($id);
+	}
+
 	public function store(Array $input, $type)
 	{
 		$validator = $this->validator;
@@ -34,7 +39,25 @@ class ItemServices
 			$item->user_id = Auth::user()->id;
 			$item->type = $type;
 
-			return $this->itemRepo->store($item);
+			return $this->itemRepo->save($item);
+		}
+		else 
+		{
+			throw new ValidationException($validator->getErrors());
+		}
+	}
+
+	public function update($id, Array $input)
+	{
+		$validator = $this->validator;
+
+		if ($validator->isValid($input))
+		{
+			$item = $this->getItemById($id);
+			$item->name = $input['name'];
+			$item->description = $input['description'];
+
+			return $this->itemRepo->save($item);
 		}
 		else 
 		{

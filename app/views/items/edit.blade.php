@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.base')
 
-@section('main')
+@section('body')
 
-<h1>Edit Item</h1>
+<h1>Editar Item</h1>
 
 {{ Form::model($item, array('method' => 'PATCH', 'route' => array('items.update', $item->id))) }}
 	@include('items.partials._form')
