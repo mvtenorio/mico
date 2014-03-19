@@ -1,4 +1,4 @@
-<?php namespace MICO\Models;
+<?php namespace Mico\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 

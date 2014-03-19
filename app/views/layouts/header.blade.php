@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"><i class="fa fa-inbox"></i>&nbsp; MICO</a>
+			<a class="navbar-brand"><i class="fa fa-inbox"></i>&nbsp; Mico</a>
 		</div>
 
 		<ul class="nav navbar-top-links navbar-right">
@@ -19,7 +19,7 @@
 				</a>
 				<ul class="dropdown-menu">
 						<li>
-							<a href="#"><i class="fa fa-info-circle fa-fw"></i> Sobre o MICO</a>
+							<a href="#"><i class="fa fa-info-circle fa-fw"></i> Sobre o Mico</a>
 						</li>
 						<li class="divider"></li>
 						<li>{{ link_to('logout', 'Sair') }}</li>

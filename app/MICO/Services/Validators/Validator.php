@@ -1,4 +1,4 @@
-<?php namespace MICO\Services\Validators;
+<?php namespace Mico\Services\Validators;
 
 abstract class Validator {
  

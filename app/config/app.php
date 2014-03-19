@@ -108,7 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
-		'MICO\Repositories\BackendServiceProvider'
+		'Mico\Repositories\BackendServiceProvider'
 
 	),
 

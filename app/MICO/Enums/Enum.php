@@ -1,5 +1,5 @@
 <?php
-namespace MICO\Enums;
+namespace Mico\Enums;
 use ReflectionClass;
 use Exception;
 /**

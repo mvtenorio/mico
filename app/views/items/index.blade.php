@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.base')
 
-@section('main')
+@section('body')
 
 <h1>All Items</h1>
 

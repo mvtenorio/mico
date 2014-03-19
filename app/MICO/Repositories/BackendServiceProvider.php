@@ -1,4 +1,4 @@
-<?php namespace MICO\Repositories;
+<?php namespace Mico\Repositories;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -8,8 +8,13 @@ class BackendServiceProvider extends ServiceProvider
 	{
 
 		$this->app->bind(
-			'MICO\Repositories\Interfaces\UserRepositoryInterface',
-			'MICO\Repositories\Eloquent\EloquentUserRepository'
+			'Mico\Repositories\Interfaces\UserRepositoryInterface',
+			'Mico\Repositories\Eloquent\EloquentUserRepository'
+		);
+
+		$this->app->bind(
+			'Mico\Repositories\Interfaces\ItemRepositoryInterface',
+			'Mico\Repositories\Eloquent\EloquentItemRepository'
 		);
 
 	}

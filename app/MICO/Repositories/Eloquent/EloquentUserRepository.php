@@ -1,7 +1,7 @@
-<?php namespace MICO\Repositories\Eloquent;
+<?php namespace Mico\Repositories\Eloquent;
 
-use MICO\Models\User;
-use MICO\Repositories\Interfaces\UserRepositoryInterface;
+use Mico\Models\User;
+use Mico\Repositories\Interfaces\UserRepositoryInterface;
 
 class EloquentUserRepository implements UserRepositoryInterface{
 

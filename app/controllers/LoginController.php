@@ -1,7 +1,7 @@
 <?php
 
-use MICO\Services\Validators\LoginValidator;
-use MICO\Services\Validators\ValidationException;
+use Mico\Services\Validators\LoginValidator;
+use Mico\Services\Validators\ValidationException;
 
 class LoginController extends BaseController {
 

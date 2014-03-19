@@ -1,8 +1,8 @@
-<?php namespace MICO\Services;
+<?php namespace Mico\Services;
 
-use MICO\Services\Validators\UserValidator;
-use MICO\Services\Validators\ValidationException;
-use MICO\Repositories\Interfaces\UserRepositoryInterface as UserRepository;
+use Mico\Services\Validators\UserValidator;
+use Mico\Services\Validators\ValidationException;
+use Mico\Repositories\Interfaces\UserRepositoryInterface as UserRepository;
 
 class UsersManager {
 	

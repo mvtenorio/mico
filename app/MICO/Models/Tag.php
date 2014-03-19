@@ -1,4 +1,4 @@
-<?php namespace MICO\Models;
+<?php namespace Mico\Models;
 
 class Tag extends BaseModel {
 	protected $guarded = array();

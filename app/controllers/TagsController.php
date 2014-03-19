@@ -1,6 +1,6 @@
 <?php
 
-use MICO\Models\Tag;
+use Mico\Models\Tag;
 
 class TagsController extends BaseController {
 

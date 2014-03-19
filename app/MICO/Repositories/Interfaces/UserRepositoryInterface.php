@@ -1,4 +1,4 @@
-<?php namespace MICO\Repositories\Interfaces;
+<?php namespace Mico\Repositories\Interfaces;
 
 interface UserRepositoryInterface {
 	public function getAll();

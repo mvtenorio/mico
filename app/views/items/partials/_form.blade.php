@@ -5,8 +5,8 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('name', 'Descrição:') }}
-        {{ Form::textarea('name') }}
+        {{ Form::label('description', 'Descrição:') }}
+        {{ Form::textarea('description') }}
     </div>
 
 	<div class="form-group">

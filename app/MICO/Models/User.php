@@ -1,4 +1,4 @@
-<?php namespace MICO\Models;
+<?php namespace Mico\Models;
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;

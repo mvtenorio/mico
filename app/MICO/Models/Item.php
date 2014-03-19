@@ -1,9 +1,6 @@
-<?php namespace MICO\Models;
+<?php namespace Mico\Models;
 
-class Item extends BaseModel {
-	protected $guarded = array();
-
-	public static $rules = array(
-		'name' => 'required'
-	);
+class Item extends BaseModel
+{
+	protected $fillable = array('name', 'description');
 }
