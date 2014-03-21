@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"><i class="fa fa-inbox"></i>&nbsp; Mico</a>
+			<a class="navbar-brand"><i class="fa fa-search"></i>&nbsp; Mico</a>
 		</div>
 
 		<ul class="nav navbar-top-links navbar-right">

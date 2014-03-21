@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
-@section('content')
+@section('body')
 
-<h1>Mico</h1>
+<h1>Home</h1>
 
 @stop
