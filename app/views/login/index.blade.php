@@ -1,24 +1,32 @@
 @extends('layouts.base')
 
+@section('css')
+	<link rel="stylesheet" href="css/login.css">
+@stop
+
 @section('content')
-	<div class="account-wall">
-		<div class="margin">
-			<img class="profile-img" src="{{ asset('images/logo-login.png') }}" alt="">
-
-			{{ Form::open(array('url' => 'login', 'class' => 'form-signin')) }}
-
-				@include('layouts.partials.errors')
-
-				{{ Form::text('email', $value = null, array('class' => 'form-control', 'autofocus' => 'autofocus', 'placeholder' => 'E-mail', 'required' => 'required')) }}
-				{{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Senha', 'required' => 'required')) }}
-				<button class="btn btn-lg btn-primary btn-block" type="submit">
-					Entrar
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
-				
-				
-				<span class="clearfix"></span>
+				<a class="navbar-brand" href="#">Mico</a>
+			</div>
+			<div class="navbar-collapse collapse">
 
-			{{ Form::close() }}
+				{{ Form::open(array('url' => 'login', 'class' => 'navbar-form navbar-right')) }}
+					<div class="form-group">
+						{{ Form::text('email', $value = null, array('class' => 'form-control', 'placeholder' => 'Email')) }}
+					</div>
+					<div class="form-group">
+						{{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Senha')) }}
+					</div>
+					<button class="btn btn-success" type="submit">Entrar</button>
+				{{ Form::close() }}
+			</div><!--/.navbar-collapse -->
 		</div>
 	</div>
 @stop

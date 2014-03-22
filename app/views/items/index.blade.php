@@ -6,10 +6,15 @@
 
 @section('body')
 
-<p>{{ link_to_route('items.create', 'Novo item') }}</p>
+<p class="float-left">{{ link_to_route('items.create', 'Novo item') }}</p>
+
+<ol class="breadcrumb text-center">
+	<li><a href="{{ url('/') }}">Home</a></li>
+	<li class="active">Itens</li>
+</ol>
 
 @if ($items->count())
-	<div>
+	<div class="container">
 		@foreach (array_chunk($items->all(), 3) as $row)
 			<div class="row">
 				@foreach ($row as $item)

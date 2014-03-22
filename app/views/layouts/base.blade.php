@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mico Beta</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+		@include('layouts.partials.head')
+    </head>
+	<body>
+		 <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		@section('content')
 
-	<title>Mico Beta</title>
+			@include('layouts.partials.menu')
 
-	@include('layouts.head')
+			@include('layouts.partials.header')
 
-</head>
-<body>
+			<div class="wrapper">
+				@yield('body')
+			</div>
 
-@section('content')
+		@show
 
-	@include('layouts.header')
-
-	<ol class="breadcrumb text-center">
-		<li><a href="{{ url('/') }}">Home</a></li>
-		<li class="active">Itens</li>
-	</ol>
-
-	<form role="form" class="form">
-		<div class="form-group col-md-6 col-md-offset-3 right-inner-addon">
-			<i class="fa fa-search fa-lg"></i>
-			<label class="sr-only" for="search-input">Buscar</label>
-			<input type="text" class="form-control input-lg" id="search-input">
-		</div>
-	</form>
-
-	<div class="wrapper">
-		@yield('body')
-	</div>
-
-	@include('layouts.footer')
-
-@show
-
-</body>
+		@include('layouts.partials.footer')
+	</body>
 </html>
-
-@include('layouts.foot')

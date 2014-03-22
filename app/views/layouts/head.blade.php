@@ -1,4 +1,0 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
-<link href="{{ url('/css/application.css') }} " rel="stylesheet" media="screen">
-@yield('css')

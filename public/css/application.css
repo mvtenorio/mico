@@ -1,6 +1,12 @@
 .wrapper {
-	width: 700px;
+	width: 678px;
 	margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
 }
 
 .right-inner-addon {
@@ -17,4 +23,12 @@
     top: 6px;
     padding: 10px 12px;
     pointer-events: none;
+}
+
+.float-right {
+	float: right;
+}
+
+#search-form {
+    margin-top: 10px;
 }
