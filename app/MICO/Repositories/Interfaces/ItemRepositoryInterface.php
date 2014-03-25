@@ -6,5 +6,5 @@ interface ItemRepositoryInterface extends BaseRepositoryInterface
 {
 	public function getItemById($id);
 	public function save(Item $item);
-	public function destroy();
+	public function destroy($id);
 }

@@ -22,7 +22,8 @@ class EloquentItemRepository implements ItemRepositoryInterface
 		return $item;
 	}
 
-	public function destroy()
+	public function destroy($id)
 	{
+		return Item::destroy($id);
 	}
 }

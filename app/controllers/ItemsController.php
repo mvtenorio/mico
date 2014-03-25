@@ -70,11 +70,11 @@ class ItemsController extends BaseController
 		}
 	}
 
-	// public function destroy($id)
-	// {
-	// 	$this->item->find($id)->delete();
+	public function destroy($id)
+	{
+		$this->itemServices->destroy($id);
 
-	// 	return Redirect::route('items.index');
-	// }
+		return Redirect::route('items.index');
+	}
 
 }

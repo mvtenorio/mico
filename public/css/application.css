@@ -1,12 +1,10 @@
 .wrapper {
-	width: 678px;
+	width: 768px;
 	margin: 0 auto;
 }
 
-footer {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
+footer p {
+    margin-left: 50px;
 }
 
 .right-inner-addon {
@@ -23,10 +21,6 @@ footer {
     top: 6px;
     padding: 10px 12px;
     pointer-events: none;
-}
-
-.float-right {
-	float: right;
 }
 
 #search-form {

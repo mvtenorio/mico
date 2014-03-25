@@ -64,4 +64,9 @@ class ItemServices
 			throw new ValidationException($validator->getErrors());
 		}
 	}
+
+	public function destroy($id)
+	{
+		$this->itemRepo->destroy($id);
+	}
 }

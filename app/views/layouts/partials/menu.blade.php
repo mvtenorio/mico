@@ -21,12 +21,11 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown" style="margin-right:15px">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-gear fa-lg"></i>
 				</a>
 				<ul class="dropdown-menu">
-					<li>
-						<a href="#"><i class="fa fa-info-circle fa-fw"></i> Sobre o Mico</a>
-					</li>
+					<li><a href="#">Configurações</a></li>
+					<li><a href="#">Sobre</a></li>
 					<li class="divider"></li>
 					<li>{{ link_to('logout', 'Sair') }}</li>
 				</ul>
