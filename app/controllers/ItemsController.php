@@ -21,7 +21,8 @@ class ItemsController extends BaseController
 
 	public function create()
 	{
-		return View::make('items.create');
+		$item = new Mico\Models\Item;
+		return View::make('items.create', compact('item'));
 	}
 
 	public function store()
