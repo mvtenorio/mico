@@ -1,65 +1,45 @@
 <?php
 
-use Mico\Models\Tag;
+use Mico\Services\TagServices;
+use Mico\Services\Validators\ValidationException;
 
-class TagsController extends BaseController {
+class TagsController extends BaseController
+{
+	protected $tagServices;
 
-	/**
-	 * Tag Repository
-	 *
-	 * @var Tag
-	 */
-	protected $tag;
-
-	public function __construct(Tag $tag)
+	public function __construct(TagServices $tagServices)
 	{
-		$this->tag = $tag;
+		$this->tagServices = $tagServices;
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		$tags = $this->tag->all();
+		$tags = $this->tagServices->getAll();
+		$qtdUl = round($tags->count() / 3);
 
-		return View::make('tags.index', compact('tags'));
+		return View::make('tags.index', compact('tags','qtdUl'));
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
 	public function store()
 	{
-		// $input = Input::all();
-		// $validation = Validator::make($input, Tag::$rules);
+		$input = Input::all();
 
-		// if ($validation->passes())
-		// {
-		// 	$this->tag->create($input);
-
-		// 	return Redirect::route('tags.index');
-		// }
-
-		// return Redirect::route('tags.create')
-		// 	->withInput()
-		// 	->withErrors($validation)
-		// 	->with('message', 'There were validation errors.');
+		try
+		{
+			$this->tagServices->store($input);
+			return Redirect::route('tags.index');
+		}
+		catch (ValidationException $e)
+		{
+			return Redirect::route('tags.create')
+				->withInput()
+				->withErrors($e->getErrors());
+		}
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
-		$this->tag->find($id)->delete();
+		$this->tagServices->destroy($id);
 
 		return Redirect::route('tags.index');
 	}

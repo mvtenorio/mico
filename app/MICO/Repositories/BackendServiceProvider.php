@@ -17,5 +17,10 @@ class BackendServiceProvider extends ServiceProvider
 			'Mico\Repositories\Eloquent\EloquentItemRepository'
 		);
 
+		$this->app->bind(
+			'Mico\Repositories\Interfaces\TagRepositoryInterface',
+			'Mico\Repositories\Eloquent\EloquentTagRepository'
+		);
+
 	}
 }
