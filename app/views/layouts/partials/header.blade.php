@@ -1,8 +1,12 @@
 <form role="form" id="search-form">
-	<div class="form-group col-md-6 col-md-offset-3 right-inner-addon">
-		<i class="fa fa-search fa-lg"></i>
-		<label class="sr-only" for="search-input">Buscar</label>
+	<label class="sr-only" for="search-input">Buscar</label>
+	<div class="form-group input-group col-md-6 col-md-offset-3">
 		<input type="text" class="form-control input-lg" id="search-input">
+		<div class="input-group-btn">
+			<button type="submit" class="btn btn-lg btn-info">
+				<i class="fa fa-search"></i>
+			</button>
+		</div>
 	</div>
 </form>
 

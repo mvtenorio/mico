@@ -1,23 +1,21 @@
 <?php
 
-class HomeController extends BaseController {
+use Mico\Services\ItemServices;
+use Mico\Services\Validators\ValidationException;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+class HomeController extends BaseController
+{
+	protected $itemServices;
+
+	public function __construct(ItemServices $itemServices)
+	{
+		$this->itemServices = $itemServices;
+	}
 
 	public function index()
 	{
-		return View::make('home.index');
-	}
+		$items = $this->itemServices->getAll();
 
+		return View::make('home.index', compact('items'));
+	}
 }

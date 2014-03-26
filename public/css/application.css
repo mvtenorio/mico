@@ -3,8 +3,8 @@ body {
 }
 
 .wrapper {
-	width: 768px;
-	margin: 0 auto;
+	margin-left: 50px;
+    margin-right: 50px;
 }
 
 footer p {
@@ -16,24 +16,4 @@ div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
     float: left;
     margin-left: 2px;
     color: #b3b3b3;
-}
-
-.right-inner-addon {
-    position: relative;
-}
-
-.right-inner-addon input {
-    padding-right: 35px;
-}
-
-.right-inner-addon i {
-    position: absolute;
-    right: 15px;
-    top: 6px;
-    padding: 10px 12px;
-    pointer-events: none;
-}
-
-#search-form {
-    margin-top: 10px;
 }

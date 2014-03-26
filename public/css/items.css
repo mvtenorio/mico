@@ -3,19 +3,19 @@
 	margin: 10px;
 }
 
-.item .block a img {
+.item .thumbnail a img {
 	max-width: 100%;
     height: auto;
     width: auto\9; /* ie8 */
 }
 
-.item .block a.darken {
+.item .thumbnail a.darken {
     display: inline-block;
     background: black;
     padding: 0;
 }
 
-.item .block a.darken img {
+.item .thumbnail a.darken img {
     display: block;
     
     -webkit-transition: all 0.5s linear;
