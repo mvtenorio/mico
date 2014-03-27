@@ -31,14 +31,12 @@ class ItemsController extends BaseController
 
 		try
 		{
-			$this->itemServices->store($input, 'OBJECT');
-			return Redirect::route('items.index');
+			$item = $this->itemServices->store($input);
+			return Redirect::route('items.edit', $item->id);
 		}
 		catch (ValidationException $e)
 		{
-			return Redirect::route('items.create')
-				->withInput()
-				->withErrors($e->getErrors());
+			dd($e->getErrors());
 		}
 	}
 

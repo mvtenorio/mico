@@ -6,19 +6,24 @@
 
 @section('body')
 
-@include('items.partials._breadcrumb')
+<h1 class="text-center">Itens</h1>
 
 <div class="row">
 
-	<div class="col-md-3"></div>
+	<div class="col-md-2"></div>
 
-	<div class="col-md-6">
+	<div class="col-xs-12 col-md-8">
 
 		@include('items.partials._list')
 
 	</div>
 
-	<div class="col-md-3"></div>
+	<div class="col-md-2">
+		
+		@include('items.partials._new-item')
+		@include('items.partials._new-place')
+
+	</div>
 
 </div>
 

@@ -9,9 +9,20 @@
 	@include('items.partials._breadcrumb')
 
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			@include('items.partials._list')	
+
+		<div class="col-md-2"></div>
+
+		<div class="col-xs-12 col-md-8">
+
+			@include('items.partials._list')
+
 		</div>
-	</div>
+
+		<div class="col-md-2">
+			
+			@include('items.partials._new-item')
+			@include('items.partials._new-place')
+
+		</div>
 
 @stop

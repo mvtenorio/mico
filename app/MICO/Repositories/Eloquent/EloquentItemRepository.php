@@ -8,7 +8,7 @@ class EloquentItemRepository implements ItemRepositoryInterface
 {
 	public function getAll()
 	{
-		return Item::all();
+		return Item::orderBy('type')->get();
 	}
 
 	public function getItemById($id)

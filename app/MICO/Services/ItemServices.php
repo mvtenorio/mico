@@ -27,7 +27,7 @@ class ItemServices
 		return $this->itemRepo->getItemById($id);
 	}
 
-	public function store(Array $input, $type)
+	public function store(Array $input)
 	{
 		$validator = $this->validator;
 
@@ -35,9 +35,8 @@ class ItemServices
 		{
 			$item = new Item;
 			$item->name = $input['name'];
-			$item->description = $input['description'];
+			$item->type = $input['type'];
 			$item->user_id = Auth::user()->id;
-			$item->type = $type;
 
 			return $this->itemRepo->save($item);
 		}

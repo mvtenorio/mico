@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="navbar-header">
-		<a href="{{ url('/') }}" class="navbar-brand"><i class="fa fa-search"></i>&nbsp; Mico</a>
+		<a href="{{ url('/') }}" class="navbar-brand">Mico <i class="fa fa-question fa-lg"></i></a>
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -21,6 +21,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown" style="margin-right:15px">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<span>{{ Auth::user()->name }}</span>
 					<i class="fa fa-gear fa-lg"></i>
 				</a>
 				<ul class="dropdown-menu">
