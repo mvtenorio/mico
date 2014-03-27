@@ -6,6 +6,12 @@
 
 @section('body')
 
-@include('items.partials._list')
+	@include('items.partials._breadcrumb')
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			@include('items.partials._list')	
+		</div>
+	</div>
 
 @stop

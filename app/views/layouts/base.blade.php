@@ -22,7 +22,7 @@
 
 			@include('layouts.partials.header')
 
-			<div class="wrapper">
+			<div class="container">
 				@yield('body')
 			</div>
 

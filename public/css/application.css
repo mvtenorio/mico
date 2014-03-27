@@ -1,14 +1,15 @@
-body {
-    overflow-x: hidden
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-.wrapper {
-	margin-left: 50px;
-    margin-right: 50px;
+.header {
+    padding-top: 80px;
 }
 
 footer p {
-    margin-left: 50px;
+    padding: 50px;
 }
 
 div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {

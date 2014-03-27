@@ -6,14 +6,11 @@
 
 @section('body')
 
-<div class="container">
+@include('items.partials._breadcrumb')
+
 <div class="row">
 
-	<div class="col-md-3">
-
-		Left
-
-	</div>
+	<div class="col-md-3"></div>
 
 	<div class="col-md-6">
 
@@ -21,14 +18,8 @@
 
 	</div>
 
-	<div class="col-md-3">
+	<div class="col-md-3"></div>
 
-		Right
-
-	</div>
 </div>
-</div>
-
-<div class="clearfix"></div>
 
 @stop
