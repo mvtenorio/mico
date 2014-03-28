@@ -5,16 +5,9 @@
 }
 
 .header {
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
 footer p {
     padding: 50px;
-}
-
-div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
-    content: attr(data-placeholder);
-    float: left;
-    margin-left: 2px;
-    color: #b3b3b3;
 }

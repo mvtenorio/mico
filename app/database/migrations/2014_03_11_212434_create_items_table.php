@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration {
 			$table->integer('user_id')->unsigned();
 			$table->integer('parent_id')->unsigned()->nullable();
 			$table->string('name');
-			$table->text('description');
+			$table->text('description')->nullable();
 			$table->enum('type', array('PLACE', 'OBJECT'));
 			$table->timestamps();
 		});

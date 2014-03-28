@@ -7,7 +7,7 @@
 				<div class="input-group">
 					<input type="text" name="name" class="form-control" id="new-item-name" placeholder="Novo item">
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-info">
+						<button type="submit" class="btn btn-primary">
 							<i class="fa fa-plus"></i>
 						</button>
 					</div>

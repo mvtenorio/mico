@@ -59,7 +59,7 @@ class ItemsController extends BaseController
 		try
 		{
 			$this->itemServices->update($id, $input);
-			return Redirect::route('items.edit', $id);
+			return Redirect::route('items.index');
 		}
 		catch (ValidationException $e)
 		{

@@ -21,7 +21,6 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown" style="margin-right:15px">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-					<span>{{ Auth::user()->name }}</span>
 					<i class="fa fa-gear fa-lg"></i>
 				</a>
 				<ul class="dropdown-menu">

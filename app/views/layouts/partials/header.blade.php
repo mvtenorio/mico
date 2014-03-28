@@ -6,7 +6,7 @@
 				<div class="form-group input-group">
 					<input type="text" class="form-control input-lg" id="search-input">
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-lg btn-info">
+						<button type="submit" class="btn btn-lg btn-primary">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
