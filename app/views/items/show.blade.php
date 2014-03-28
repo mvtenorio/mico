@@ -1,29 +1,45 @@
-@extends('layouts.master')
+@extends('layouts.base')
 
-@section('main')
+@section('css')
+	<link rel="stylesheet" href="{{ asset('css/items.css') }}">
+@stop
 
-<h1>Show Item</h1>
+@section('body')
 
-<p>{{ link_to_route('items.index', 'Return to all items') }}</p>
+	<!-- @include('items.partials._breadcrumb') -->
 
-<table class="table table-striped table-bordered">
-	<thead>
-		<tr>
-			<th>Name</th>
-		</tr>
-	</thead>
+	<div class="row top">
 
-	<tbody>
-		<tr>
-			<td>{{{ $item->name }}}</td>
-                    <td>{{ link_to_route('items.edit', 'Edit', array($item->id), array('class' => 'btn btn-info')) }}</td>
-                    <td>
-                        {{ Form::open(array('method' => 'DELETE', 'route' => array('items.destroy', $item->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                        {{ Form::close() }}
-                    </td>
-		</tr>
-	</tbody>
-</table>
+		<div class="col-md-6 col-md-offset-3">
+			<a href="{{ route('items.index') }}" class="pull-right">Voltar</a>
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-3">
+			<div class="thumbnail-sm">
+				<img src="{{ asset('img/sample/box.png') }}" alt="{{ $parent->name }}" class="img-responsive">
+			</div>
+			<p><strong>{{ $parent->name }}</strong></p>
+			<p><small>{{ str_limit($parent->description, $limit = 150, $end = link_to('/', ' Ver Mais')) }}</small></p>
+			<p><a href="{{ route('items.edit', $parent->id) }}" class="btn btn-sm btn-default">Editar</a></p>
+		</div>
+
+		<div class="col-xs-12 col-md-6">
+
+			@include('items.partials._list', array('message' => 'Nenhum item aqui'))
+
+		</div>
+
+		<div class="col-xs-12 col-md-3">
+
+			@include('items.partials._new-item', array('parentId' => $parent->id))
+			@include('items.partials._new-place', array('parentId' => $parent->id))
+
+		</div>
+
+	</div>
 
 @stop

@@ -14,15 +14,9 @@ class ItemsController extends BaseController
 
 	public function index()
 	{
-		$items = $this->itemServices->getAll();
+		$items = $this->itemServices->getRootItems();
 
 		return View::make('items.index', compact('items'));
-	}
-
-	public function create()
-	{
-		$item = new Mico\Models\Item;
-		return View::make('items.create', compact('item'));
 	}
 
 	public function store()
@@ -50,6 +44,14 @@ class ItemsController extends BaseController
 		}
 
 		return View::make('items.edit', compact('item'));
+	}
+
+	public function show($id)
+	{
+		$parent = $this->itemServices->getItemById($id);
+		$items = $this->itemServices->getChildren($id);
+
+		return View::make('items.show', compact('parent' ,'items'));
 	}
 
 	public function update($id)

@@ -14,7 +14,7 @@ class HomeController extends BaseController
 
 	public function index()
 	{
-		$items = $this->itemServices->getAll();
+		$items = $this->itemServices->getMostRecentItems();
 
 		return View::make('home.index', compact('items'));
 	}

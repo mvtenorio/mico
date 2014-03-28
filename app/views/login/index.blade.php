@@ -24,7 +24,7 @@
 					<div class="form-group">
 						{{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Senha')) }}
 					</div>
-					<button class="btn btn-success" type="submit">Entrar</button>
+					<button class="btn btn-default" type="submit">Entrar</button>
 				{{ Form::close() }}
 			</div><!--/.navbar-collapse -->
 		</div>

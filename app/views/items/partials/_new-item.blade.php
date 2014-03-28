@@ -3,6 +3,7 @@
 		{{  Form::open(array('route' => 'items.store', 'class' => 'form.inline')) }}
 			<div class="form-group">
 				<input type="hidden" name="type" value="OBJECT">
+				<input type="hidden" name="parent_id" value="{{ isset($parentId) ? $parentId : null }}">
 				<label class="sr-only" for="new-item-name">Novo item</label>
 				<div class="input-group">
 					<input type="text" name="name" class="form-control" id="new-item-name" placeholder="Novo item">

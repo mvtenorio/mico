@@ -1,7 +1,16 @@
 <div class="row">
+
+    <div class="col-md-8 col-md-offset-2">
+        <a href="{{ route('items.index') }}" class="pull-right">Voltar</a>
+        <h3 class="title">Editar "{{ $item->name }}"</h3>
+    </div>
+
+</div>
+
+<div class="row">
     <div class="col-md-4">
         <div class="form-group">
-            <img class="img-responsive" src="{{ asset('img/sample/rocket.png') }}" />
+            <img class="img-responsive" src="{{ $item->isObject() ? asset('img/sample/rocket.png') : asset('img/sample/box.png') }}" />
         </div>
     </div>
     <div class="col-md-8">

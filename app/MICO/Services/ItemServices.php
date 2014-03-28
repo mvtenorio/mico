@@ -27,6 +27,21 @@ class ItemServices
 		return $this->itemRepo->getItemById($id);
 	}
 
+	public function getRootItems()
+	{
+		return $this->itemRepo->getRootItems();
+	}
+
+	public function getChildren($id)
+	{
+		return $this->itemRepo->getChildren($id);
+	}
+
+	public function getMostRecentItems()
+	{
+		return $this->itemRepo->getMostRecentItems();
+	}
+
 	public function store(Array $input)
 	{
 		$validator = $this->validator;
@@ -36,11 +51,12 @@ class ItemServices
 			$item = new Item;
 			$item->name = $input['name'];
 			$item->type = $input['type'];
+			$item->parent_id = $input['parent_id'];
 			$item->user_id = Auth::user()->id;
 
 			return $this->itemRepo->save($item);
 		}
-		else 
+		else
 		{
 			throw new ValidationException($validator->getErrors());
 		}
