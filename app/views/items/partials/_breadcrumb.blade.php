@@ -1,8 +1,8 @@
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
+<div class="row top">
+	<div class="col-md-6 col-md-offset-3 text-center">
 		<ol class="breadcrumb">
-			<li class="active">Itens</li>
-			<li class="">Itens</li>
+			{{ get_parent_list($item) }}
+			<li class="active">{{ $item->name }}</li>
 		</ol>
 	</div>
 </div>

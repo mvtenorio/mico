@@ -25,7 +25,7 @@ class CreateItemsTable extends Migration {
 		Schema::table('items', function($table)
 		{
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->foreign('parent_id')->references('id')->on('items');
+			$table->foreign('parent_id')->references('id')->on('items')->onDelete('cascade');
 		});
 	}
 

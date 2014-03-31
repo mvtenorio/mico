@@ -51,7 +51,7 @@ class ItemServices
 			$item = new Item;
 			$item->name = $input['name'];
 			$item->type = $input['type'];
-			$item->parent_id = $input['parent_id'];
+			$item->parent_id = $input['parent_id'] ?: null;
 			$item->user_id = Auth::user()->id;
 
 			return $this->itemRepo->save($item);

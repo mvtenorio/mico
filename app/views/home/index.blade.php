@@ -20,7 +20,7 @@
 
 	<div class="col-xs-12 col-md-6">
 
-		@include('items.partials._list', array('message' => 'Você ainda não cadastrou nenhum item'))
+		@include('items.partials._list', array('message' => 'Você ainda não cadastrou nenhum item.'))
 
 	</div>
 

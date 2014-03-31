@@ -34,6 +34,14 @@ class ItemsController extends BaseController
 		}
 	}
 
+	public function show($id)
+	{
+		$item = $this->itemServices->getItemById($id);
+		$items = $this->itemServices->getChildren($id);
+
+		return View::make('items.show', compact('item' ,'items'));
+	}
+
 	public function edit($id)
 	{
 		$item = $this->itemServices->getItemById($id);
@@ -46,22 +54,14 @@ class ItemsController extends BaseController
 		return View::make('items.edit', compact('item'));
 	}
 
-	public function show($id)
-	{
-		$parent = $this->itemServices->getItemById($id);
-		$items = $this->itemServices->getChildren($id);
-
-		return View::make('items.show', compact('parent' ,'items'));
-	}
-
 	public function update($id)
 	{
 		$input = array_except(Input::all(), '_method');
 
 		try
 		{
-			$this->itemServices->update($id, $input);
-			return Redirect::route('items.index');
+			$item = $this->itemServices->update($id, $input);
+			return Redirect::route('items.show', $item->id);
 		}
 		catch (ValidationException $e)
 		{

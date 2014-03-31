@@ -18,7 +18,7 @@ class EloquentItemRepository implements ItemRepositoryInterface
 
 	public function getRootItems()
 	{
-		return Item::where('parent_id', '=', null)->get();
+		return Item::where('parent_id', '=', null)->orderBy('type')->get();
 	}
 
 	public function getChildren($id)
@@ -28,7 +28,7 @@ class EloquentItemRepository implements ItemRepositoryInterface
 
 	public function getMostRecentItems()
 	{
-		return Item::orderBy('updated_at', 'desc')->get();
+		return Item::orderBy('updated_at', 'desc')->take(3)->get();
 	}
 
 	public function save(Item $item)
