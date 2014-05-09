@@ -26,7 +26,7 @@ class ItemsController extends BaseController
 		try
 		{
 			$item = $this->itemServices->store($input);
-			return Redirect::route('items.edit', $item->id);
+			return Redirect::back();
 		}
 		catch (ValidationException $e)
 		{
@@ -75,7 +75,7 @@ class ItemsController extends BaseController
 	{
 		$this->itemServices->destroy($id);
 
-		return Redirect::route('items.index');
+		return Redirect::back();
 	}
 
 }
