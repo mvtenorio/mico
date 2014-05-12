@@ -11,6 +11,7 @@ class LoginController extends BaseController {
 	{
 		$this->validator = $validator;
 	}
+
 	public function index()
 	{
 		return View::make('login.index');
