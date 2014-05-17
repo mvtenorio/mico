@@ -4,13 +4,12 @@ class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$users = array(
-			'name' => 'Admin',
-			'email' => 'admin@mico.dev',
-			'password' => Hash::make('mico4405')
-		);
+		$user = new Mico\Models\User;
+		$user->name = 'Admin';
+		$user->email = 'admin@mico.dev';
+		$user->password = Hash::make('mico4405');
 
-		DB::table('users')->insert($users);
+		$user->save();
 	}
 
 }
