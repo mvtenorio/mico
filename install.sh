@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://github.com/JeffreyWay/Vagrant-Setup/blob/master/install.sh
+
 echo "--- Good morning, master. Let's get to work. Installing now. ---"
 
 echo "--- Updating packages list ---"

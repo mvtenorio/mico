@@ -11,7 +11,6 @@
 |
 */
 
-// DESLOGADO
 Route::group(array('before' => 'guest'), function()
 {
 
@@ -22,7 +21,6 @@ Route::group(array('before' => 'guest'), function()
 
 });
 
-// LOGADO
 Route::group(array('before' => 'auth'), function()
 {
 
@@ -35,19 +33,4 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::resource('items', 'ItemsController', array('except' => array('create')));
 	Route::resource('tags', 'TagsController', array('only' => array('index', 'store', 'destroy')));
-
-	// Route::get('anexo/{pasta}/{file}', array(
-	// 	'as' => 'files.show',
-	// 	'uses' => 'FilesController@getFile',
-	// 	'after' => 'file'
-	// ));
-
-	Route::group(array('before' => 'ajax'), function()
-	{
-		// ajax
-
-		// autocomplete
-		//exemplo ---> Route::get('load-usuarios-autocomplete', 'UsuariosController@getAutoComplete');
-	});
-
 });

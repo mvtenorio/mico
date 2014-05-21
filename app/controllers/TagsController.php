@@ -17,7 +17,7 @@ class TagsController extends BaseController
 		$tags = $this->tagServices->getAll();
 		$qtdUl = round($tags->count() / 3);
 
-		return View::make('tags.index', compact('tags','qtdUl'));
+		return View::make('tags.index', compact('tags', 'qtdUl'));
 	}
 
 	public function store()
